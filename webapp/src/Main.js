@@ -19,7 +19,7 @@ export class Main extends Component {
     const url = this.props.match.params.url;
     console.log(b64DecodeUnicode(url));
     const socket = openSocket(b64DecodeUnicode(url));
-    this.state = {screen: "init", input: "", id: "", color: "", status: "connecting", iosocket: socket, messages: [], messageView: <div></div>}
+    this.state = {url: b64DecodeUnicode(url), screen: "init", input: "", id: "", color: "", status: "connecting", iosocket: socket, messages: [], messageView: <div></div>}
     
     this.updateMessages = this.updateMessages.bind(this);
     this.sendMessage = this.sendMessage.bind(this);
@@ -84,7 +84,7 @@ export class Main extends Component {
       <div style={{height: "90%"}}>
         <Navbar dark expand="md">
         <NavbarBrand>Messages</NavbarBrand>
-        <small>server: <code>http://localhost:8000</code> anonid : <code>{this.state.id}</code> <span>status</span>: <code>{this.state.status}</code></small>
+        <small>server: <code>{this.state.url}</code> anonid: <code>{this.state.id}</code> <span>status</span>: <code>{this.state.status}</code></small>
         </Navbar>
       <div style={{height: "100%", overflowY: "auto", width: "100%"}} id="data">
     <Table size="sm">

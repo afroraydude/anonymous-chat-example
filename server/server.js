@@ -17,7 +17,7 @@ var serverInfo = {version: "1.0.0", title: "Test Server", rooms: ['/']};
 io.on('connection', (socket) => {
   console.log("new socket with id "+socket.id+" has connected and is ready to recieve messages.");
   var x = crypto.createHash('md4').update(socket.id).digest("hex");
-  console.log(x);
+  console.log("socket with id "+socket.id+"has been sent it's anonid which is "+x);
   socket.name = String(x);
   sockets.push(socket);
   var colorChoice = colors[Math.floor(Math.random() * colors.length)];
@@ -30,7 +30,6 @@ io.on('connection', (socket) => {
   
   socket.on('disconnect', function () {
     sockets.splice(sockets.indexOf(socket), 1);
-    //io.emit("message", {client: "Server", color: "red", data: "Annonymous user has left!"});
     console.log('client left');
   });
   socket.on('message', function(message) {
