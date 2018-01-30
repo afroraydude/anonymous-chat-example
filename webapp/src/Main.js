@@ -4,7 +4,6 @@ import './App.css';
 import openSocket from 'socket.io-client';
 import {Table, Input, Button, Form, FormGroup, Navbar, NavbarBrand} from 'reactstrap';
 
-
   const b64DecodeUnicode = function(str) {
     // Going backwards: from bytestream, to percent-encoding, to original string.
     return decodeURIComponent(atob(str).split('').map(function(c) {
@@ -25,7 +24,7 @@ export class Main extends Component {
     this.sendMessage = this.sendMessage.bind(this);
     this.handleTextTyping = this.handleTextTyping.bind(this);
     socket.on("version", function(v) {
-      if (v !== "1.0.0") {
+      if (v > parseInt(localStorage.getItem("version"))) {
         navigator.serviceWorker.getRegistrations().then(function(registrations) {
           for(let registration of registrations) {
             registration.unregister();

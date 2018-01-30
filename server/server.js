@@ -12,7 +12,7 @@ const MessageSchema = {
     data: 'string'
   }
 }
-var serverInfo = {version: "1.0.0", title: "Test Server", rooms: ['/']};
+var serverInfo = {version: "1", title: "Test Server", rooms: ['/']};
 
 io.on('connection', (socket) => {
   console.log("new socket with id "+socket.id+" has connected and is ready to recieve messages.");
@@ -46,6 +46,6 @@ setInterval(function () {
     io.emit("version", serverInfo.version);
 }, 60000);
 
-const port = 8000;
+const port = 1234;
 io.listen(port);
 console.log('listening on port ', port);
