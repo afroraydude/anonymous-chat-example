@@ -1,0 +1,36 @@
+Arguments: 
+  D:\Perjury\nodejs\node.exe D:\Perjury\Yarn\bin\yarn.js add realm
+
+PATH: 
+  C:\Program Files\Python35\Scripts\;C:\Program Files\Python35\;C:\Program Files (x86)\Intel\iCLS Client\;C:\Program Files\Intel\iCLS Client\;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files (x86)\Skype\Phone\;D:\UlteriorDevelopment\wamp64\bin\php\php7.0.10;C:\Program Files (x86)\GtkSharp\2.12\bin;C:\Program Files\Microsoft SQL Server\130\Tools\Binn\;C:\Program Files\dotnet\;D:\UlteriorMotives\Vagrant\bin;C:\Program Files\Python36;D:\Perjury\Git\cmd;C:\Program Files\Python36\Scripts;D:\Perjury\composer;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;D:\Perjury\nodejs\;C:\Program Files (x86)\Java\jdk1.8.0_131;D:\Perjury\Yarn\bin;C:\Program Files (x86)\QuickTime\QTSystem\;C:\Users\afror\AppData\Roaming\npm;C:\Users\afror\AppData\Local\Microsoft\WindowsApps;C:\Users\afror\AppData\Local\atom\bin;C:\Users\afror\AppData\Roaming\Composer\vendor\bin;D:\Perjury\Docker Toolbox;C:\Users\afror\AppData\Local\Microsoft\WindowsApps;D:\UlteriorMotives\Nmap;D:\Perjury\Microsoft VS Code Insiders\bin;D:\Perjury\nginxserverD:\Perjury\nginxserverC:\Users\afror\AppData\Roaming\npm;C:\Users\afror\AppData\Local\Yarn\bin;C:\Users\afror\AppData\Roaming\npm;
+
+Yarn version: 
+  1.3.2
+
+Node version: 
+  8.9.1
+
+Platform: 
+  win32 x64
+
+npm manifest: 
+  {
+    "name": "chatapp-server",
+    "version": "1.0.0",
+    "description": "The server for the chat app, mostly just the socket.io code",
+    "main": "server.js",
+    "scripts": {
+      "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "author": "",
+    "license": "ISC"
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
+
+Trace: 
+  Error: EPERM: operation not permitted, unlink 'D:\UlteriorDevelopment\NonGit\chatbot\server\node_modules\after\test'
