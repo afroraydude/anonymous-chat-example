@@ -1,4 +1,13 @@
-const io = require('socket.io')();
+https = require('https');
+fs = require('fs');
+require('dotenv').config();
+var httpsoptions = {
+    key: fs.readFileSync(process.env.key),
+    cert: fs.readFileSync(process.env.cert)
+};
+app = https.createServer(httpsoptions);
+io = require('socket.io',{secure: true})(app);
+require('dotenv').config();
 var crypto = require('crypto');
 sockets = [];
 messages = [];
@@ -12,6 +21,7 @@ const MessageSchema = {
     data: 'string'
   }
 }
+
 var serverInfo = {version: "1", title: "Test Server", rooms: ['/']};
 
 io.on('connection', (socket) => {
@@ -21,13 +31,13 @@ io.on('connection', (socket) => {
   socket.name = String(x);
   sockets.push(socket);
   var colorChoice = colors[Math.floor(Math.random() * colors.length)];
-  
+
   socket.emit("identification", {id: x, color: colorChoice});
   socket.emit("messagelist", messages);
   socket.emit("message", {client: "Server", color: "red", data: "Welcome!"});
   socket.emit("version", serverInfo.version);
   socket.emit("serverinfo", serverInfo);
-  
+
   socket.on('disconnect', function () {
     sockets.splice(sockets.indexOf(socket), 1);
     console.log('client left');
@@ -46,6 +56,6 @@ setInterval(function () {
     io.emit("version", serverInfo.version);
 }, 60000);
 
-const port = 1234;
-io.listen(port);
+const port = process.env.port || 1234;
+app.listen(port);
 console.log('listening on port ', port);
