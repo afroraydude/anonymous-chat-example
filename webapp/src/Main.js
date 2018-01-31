@@ -81,10 +81,6 @@ export class Main extends Component {
 
     var view = (
       <div style={{height: "90%"}}>
-        <Navbar dark expand="md">
-        <NavbarBrand>Messages</NavbarBrand>
-        <small>server: <code>{this.state.url}</code> anonid: <code>{this.state.id}</code> <span>status</span>: <code>{this.state.status}</code></small>
-        </Navbar>
       <div style={{height: "100%", overflowY: "auto", width: "100%"}} id="data">
     <Table size="sm">
       <thead>
@@ -124,10 +120,28 @@ export class Main extends Component {
   render() {
     var screen = "null";
     if (this.state.screen === "init") {
-      screen = <p>Connecting...</p>
+      screen =  (
+        <div style={{height: "100%", width: "100%"}}>
+          <Navbar dark expand="md">
+            <NavbarBrand>Messages</NavbarBrand>
+            <small>server: <code>{this.state.url}</code> anonid: <code>{this.state.id}</code> <span>status</span>: <code>{this.state.status}</code></small>
+          </Navbar>
+          <div className="footform" style={{width: "100%", display: "block", position: "absolute", bottom: 0, height: 45}}>
+            <Form onSubmit={this.sendMessage} inline style={{width: "100%"}}>
+            <FormGroup style={{width: "100%"}}>
+              <Input style={{width: "80%"}} type="text" name="text" id="text" placeholder="Place message here..." onChange={this.handleTextTyping} style={{marginLeft: 20}} value={this.state.input} /><Button type="submit" style={{marginLeft: 20}} value="Submit">Send message</Button>
+            </FormGroup>
+            </Form>
+          </div>
+        </div>
+      )
     } else if (this.state.screen === "messages") {
       screen = (
         <div style={{height: "100%", width: "100%"}}>
+          <Navbar dark expand="md">
+            <NavbarBrand>Messages</NavbarBrand>
+            <small>server: <code>{this.state.url}</code> anonid: <code>{this.state.id}</code> <span>status</span>: <code>{this.state.status}</code></small>
+          </Navbar>
           {this.state.messageView}
             <div className="footform" style={{width: "100%", display: "block", position: "absolute", bottom: 0, height: 45}}>
             <Form onSubmit={this.sendMessage} inline style={{width: "100%"}}>
