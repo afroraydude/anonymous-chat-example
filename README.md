@@ -19,7 +19,7 @@ Installing the server is an easy 5 step process.
 
 ### Client
 
-There is no need to install the client web app. Just visit the associated website [here](https://afro-anonchat.firebase.com), however there will be an Electron app coming out soon:tm:
+There is no need to install the client web app. Just visit the associated website [here](https://afro-anonchat.firebaseapp.com), however there will be an Electron app coming out soon:tm:
 
 #### What if I want to host myself?
 
