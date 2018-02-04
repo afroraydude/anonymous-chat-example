@@ -1,6 +1,6 @@
  anonymous-chat
 ==============
-[![GitHub release](https://img.shields.io/github/release/afroraydude/anonymous-chat.svg)]() [![Github commits (since latest release)](https://img.shields.io/github/commits-since/afroraydude/anonymous-chat/latest.svg)]()
+[![GitHub release](https://img.shields.io/github/release/afroraydude/anonymous-chat-example.svg)]() [![Github commits (since latest release)](https://img.shields.io/github/commits-since/afroraydude/anonymous-chat-example/latest.svg)]()
 
 ## Welcome!
 This project is a sort of semi-anonymous chat web application and server application. Usage is simple, and all users can be identified via an "anonid" that is generated on each time you initiate connection with the server.
