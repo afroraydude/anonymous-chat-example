@@ -11,7 +11,7 @@ This project is a sort of semi-anonymous chat web application and server applica
 ### Server
 Installing the server is an easy 5 step process.
 
-1. Download the latest release of this repository from [here](https://github.com/afroraydude/anonymous-chat/releases/latest)
+1. Download the latest release of this repository from [here](https://github.com/afroraydude/anonymous-chat-example/releases/latest)
 2. Run `cd server`
 3. Run `npm install` or `yarn install` to install all necessary packages
 4. Edit the `.env` file to contain your own SSL key and certificate
